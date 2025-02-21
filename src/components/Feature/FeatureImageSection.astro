@@ -1,0 +1,52 @@
+---
+import installTerminal from "../../images/install-terminal.svg";
+import { Image } from "astro:assets";
+import ButtonSecondary from "../../components/Button/ButtonSecondary.astro";
+import ButtonPrimary from "../../components/Button/ButtonPrimary.astro";
+import { Icon } from "astro-icon/components";
+import Terminal from "../../images/terminal.svg";
+---
+
+<div class="container mx-auto px-4 max-w-6xl isolate">
+  <div class="grid sm:grid-cols-7 py-24">
+    <div class="col-span-4">
+      <h3 class="text-2xl sm:text-4xl font-display font-semibold pb-2">
+        Install Sidequest on any system
+      </h3>
+      <div class="prose prose-sky prose-p:pb-0 prose-p:mb-0 prose-ul:mt-0">
+        <p class="text-gray-700 pt-2 max-w-lg">
+          Sidequest is a strong <strong
+            >powerful tool that allows you to create, edit and delete</strong
+          > anything you could ever wish for. All in one simple CLI.
+        </p>
+
+        <ul>
+          <li><strong>Install Sidequest</strong> on any system</li>
+          <li>
+            Use Sidequest to create, edit and delete <strong
+              >anything you could ever wish for</strong>
+          </li>
+          <li>
+            Sidequest is a <strong>powerful tool</strong> that allows you to create,
+            edit and delete
+          </li>
+        </ul>
+      </div>
+
+      <div
+        class="sm:flex space-y-5 sm:space-y-0 items-center space-x-5 sm:space-x-6 pt-4 pb-4 sm:pb-0"
+      >
+        <ButtonPrimary tag="a" href="#">
+          <div class="flex items-center space-x-3">
+            <Icon name="ph:download-duotone" class="w-6 h-6" />
+            <span>Install now</span>
+          </div>
+        </ButtonPrimary>
+        <ButtonSecondary> Learn More </ButtonSecondary>
+      </div>
+    </div>
+    <div class="col-span-3">
+      <Terminal class="w-full" />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+---
+import PricingBackground from "../../images/pricing-background.svg";
+import PricingFeatureItem from "./PricingFeatureItem.astro";
+import { twMerge } from "tailwind-merge";
+interface Props {
+  description: string;
+  features?: string[];
+  backgroundColor?: string;
+  variant?: string;
+}
+const { description, features = [], variant = "default" } = Astro.props;
+---
+
+<div
+  class="bg-white relative shadow border border-gray-200 rounded-lg isolate p-4"
+>
+  <PricingBackground
+    class="w-full z-10 h-full right-0 top-0 pointer-events-none absolute bg-no-repeat bg-contain"
+  />
+  <div class="relative z-20">
+    <div class="flex z-20 justify-center">
+      <slot name="title" />
+    </div>
+    <div class="py-5">
+      <slot name="pricing" />
+    </div>
+    {
+      description && (
+        <p class="text-center text-gray-600 font-medium">{description}</p>
+      )
+    }
+    <div class="py-6 px-5 space-y-3">
+      {features.map((feature) => <PricingFeatureItem title={feature} />)}
+    </div>
+  </div>
+</div>

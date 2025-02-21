@@ -1,0 +1,23 @@
+---
+const { key, title, description } = Astro.props;
+---
+
+<button
+  @click={`selected = '${key}'`}
+  :class={`selected === '${key}' ? 'border-primary-500 bg-gradient-to-br from-primary-100 to-white' : 'border-gray-300'`}
+  class="px-5 py-2 sm:py-3 text-left border-l-[6px] rounded-r-xl"
+>
+  <span class="flex items-center space-x-2">
+    <span
+      :class={`selected === '${key}' ? 'text-primary-500' : 'text-gray-700 opacity-50'`}
+    >
+      <slot name="icon" />
+    </span>
+    <span class="block uppercase font-semibold text-base sm:text-lg">
+      {title}
+    </span>
+  </span>
+  <span class="text-gray-700 text-sm sm:text-base">
+    {description}
+  </span>
+</button>

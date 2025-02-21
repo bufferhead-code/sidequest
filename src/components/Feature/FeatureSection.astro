@@ -1,0 +1,199 @@
+---
+import compressionIcon from "../../images/compression-icon.svg?raw";
+import scalingIcon from "../../images/scaling-icon.svg?raw";
+import editingIcon from "../../images/editing-icon.svg?raw";
+import FeatureExplainerButtonSection from "./FeatureExplainerButtonSection.astro";
+import FeatureItem from "./FeatureItem.astro";
+
+import encodeIcon from "../../images/encode.svg?raw";
+import decodeIcon from "../../images/decode.svg?raw";
+
+import transcodeIcon from "../../images/transcode.svg?raw";
+import multiplexingIcon from "../../images/multiplexing.svg?raw";
+import demultiplexingIcon from "../../images/demultiplexing.svg?raw";
+import streamIcon from "../../images/stream.svg?raw";
+import filterIcon from "../../images/filter.svg?raw";
+import recordingIcon from "../../images/recording.svg?raw";
+import featureBg from "../../images/feature-background.svg";
+import Terminal from "../../images/terminal.svg";
+
+import { Icon } from "astro-icon/components";
+---
+
+<div class="relative">
+  <div
+    class="absolute w-full h-full bg-center bg-no-repeat bg-contain -mt-44"
+    style={`background-image: url(${featureBg.src});`}
+  >
+  </div>
+  <div class="container mx-auto px-4 max-w-6xl isolate">
+    <div class="pt-24" x-data="{selected: 'create'}">
+      <h3 class="mx-auto text-2xl sm:text-5xl font-display text-center">
+        Your All-In-One Solution
+      </h3>
+      <p
+        class="max-w-lg text-center mx-auto text-base sm:text-lg pt-4 text-gray-500 font-semibold"
+      >
+        Sidequest allows you to create, edit and delete anything you could ever
+        wish for. All in one simple CLI.
+      </p>
+      <div
+        class="flex flex-wrap sm:flex-nowrap sm:space-x-6 gap-3 sm:gap-0 justify-center pt-6"
+      >
+        <button
+          @click="selected = 'create'"
+          :class="selected === 'create' ? 'bg-primary text-white' : 'bg-white text-gray-700'"
+          class="shadow px-3 py-1.5 rounded-lg flex items-center space-x-3"
+        >
+          <Icon class="w-6 h-6" name="ph:stack-plus-duotone" />
+          <span class="uppercase font-semibold"> Create </span>
+        </button>
+        <button
+          @click="selected = 'update'"
+          :class="selected === 'update' ? 'bg-primary text-white' : 'bg-white text-gray-700'"
+          class="shadow px-3 py-1.5 rounded-lg flex items-center space-x-3"
+        >
+          <Icon class="w-6 h-6" name="ph:selection-background-duotone" />
+          <span class="uppercase font-semibold"> Update </span>
+        </button>
+        <button
+          @click="selected = 'delete'"
+          :class="selected === 'delete' ? 'bg-primary text-white' : 'bg-white text-gray-700'"
+          class="shadow px-3 py-1.5 rounded-lg flex items-center space-x-3"
+        >
+          <Icon class="w-6 h-6" name="ph:scissors-fill" />
+          <span class="uppercase font-semibold"> Delete </span>
+        </button>
+      </div>
+      <div class="sm:grid sm:grid-cols-5 w-full pt-10 gap-6">
+        <div class="col-span-3 px-8 flex items-center">
+          <div class="relative w-full">
+            <Terminal class="w-full" />
+            <div
+              class="absolute w-full flex-col left-0 top-0 h-full flex gap-3 justify-center text-white items-center"
+              x-show="selected === 'create'"
+            >
+              <div
+                class="rounded-full bg-primary-600 shadow-2xl shadow-primary-800 h-20 w-20 flex items-center justify-center"
+              >
+                <Icon class="w-12 h-12" name="ph:stack-plus-duotone" />
+              </div>
+              <div class="text-center font-bold">
+                Create anything <br /> from nothing
+              </div>
+            </div>
+            <div
+              class="absolute w-full flex-col left-0 top-0 h-full flex gap-3 justify-center text-white items-center"
+              x-show="selected === 'update'"
+            >
+              <div
+                class="rounded-full bg-primary-600 shadow-2xl shadow-primary-800 h-20 w-20 flex items-center justify-center"
+              >
+                <Icon
+                  class="w-12 h-12"
+                  name="ph:selection-background-duotone"
+                />
+              </div>
+              <div class="text-center font-bold">
+                Update your solution <br /> for better results
+              </div>
+            </div>
+            <div
+              class="absolute w-full flex-col left-0 top-0 h-full flex gap-3 justify-center text-white items-center"
+              x-show="selected === 'delete'"
+            >
+              <div
+                class="rounded-full bg-primary-600 shadow-2xl shadow-primary-800 h-20 w-20 flex items-center justify-center"
+              >
+                <Icon class="w-12 h-12" name="ph:scissors-fill" />
+              </div>
+              <div class="text-center font-bold">
+                Delete what the world <br /> was never meant to see
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-2 space-y-3 flex flex-col justify-center">
+          <FeatureExplainerButtonSection
+            title="Create"
+            description="Reduce the file size of basically any video or audio file and save up disk space."
+            key="create"
+          >
+            <Icon slot="icon" class="w-6 h-6" name="ph:stack-plus-duotone" />
+          </FeatureExplainerButtonSection>
+          <FeatureExplainerButtonSection
+            title="Update"
+            description="Increase or decrease the size of video. You can even crop and stretch them to your liking."
+            key="update"
+          >
+            <Icon
+              slot="icon"
+              class="w-6 h-6"
+              name="ph:selection-background-duotone"
+            />
+          </FeatureExplainerButtonSection>
+          <FeatureExplainerButtonSection
+            title="Delete"
+            description="Trim, Cut, Watermark. Perfect for automating repetitive editing tasks."
+            key="delete"
+          >
+            <Icon slot="icon" class="w-6 h-6" name="ph:scissors-fill" />
+          </FeatureExplainerButtonSection>
+        </div>
+      </div>
+      <div class="flex justify-center flex-wrap pt-8">
+        <FeatureItem title="Transform">
+          Transform documents and media into any format you need and desire for
+          your work or project with ease.
+          <Icon
+            slot="icon"
+            class="w-6 h-6"
+            name="ph:arrows-left-right-duotone"
+          />
+        </FeatureItem>
+        <FeatureItem title="Alarm">
+          Set alarms for long-running tasks and get notified when they are done.
+          Never wait again for your work to finish.
+          <Icon slot="icon" class="w-6 h-6" name="ph:alarm-duotone" />
+        </FeatureItem>
+        <FeatureItem title="Built-in Batteries">
+          Built-in batteries to keep your work going even when the power goes
+          out. Never lose your work again.
+          <Icon
+            slot="icon"
+            class="w-6 h-6"
+            name="ph:battery-charging-duotone"
+          />
+        </FeatureItem>
+        <FeatureItem title="Notifications">
+          Get notified when your work is done or when something goes wrong. Stay
+          up to date with your work at all times.
+          <Icon slot="icon" class="w-6 h-6" name="ph:bell-ringing-duotone" />
+        </FeatureItem>
+        <FeatureItem title="Snapshots">
+          Take snapshots of your work and save them for later. Restore them at
+          any time to continue your work.
+          <Icon slot="icon" class="w-6 h-6" name="ph:camera-duotone" />
+        </FeatureItem>
+        <FeatureItem title="Communication">
+          Communicate with your team or friends via the built-in chat. Share
+          your work and get feedback.
+          <Icon slot="icon" class="w-6 h-6" name="ph:chats-circle-duotone" />
+        </FeatureItem>
+        <FeatureItem title="Database Support">
+          Connect to any database and store your work in a secure and reliable
+          way.
+          <Icon slot="icon" class="w-6 h-6" name="ph:database-duotone" />
+        </FeatureItem>
+        <FeatureItem title="Email Support">
+          Send emails directly from Sidequest to your clients or team members.
+          <Icon
+            slot="icon"
+            class="w-6 h-6"
+            name="ph:envelope-simple-open-duotone"
+          />
+        </FeatureItem>
+      </div>
+    </div>
+  </div>
+</div>

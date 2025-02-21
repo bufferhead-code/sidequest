@@ -1,0 +1,76 @@
+---
+import { Image } from "astro:assets";
+
+import ffplayLogo from "../../images/ffplay.svg";
+import logo from "../../images/logo.svg";
+import LibraryItem from "../Feature/LibraryItem.astro";
+import PricingCard from "./PricingCard.astro";
+---
+
+<div class="container mx-auto px-4 max-w-6xl pt-10 isolate">
+  <h3 class="mx-auto text-2xl sm:text-5xl font-display text-center">
+    The Right Tool for your Needs
+  </h3>
+  <p
+    class="max-w-xl text-center mx-auto text-base sm:text-lg py-4 text-gray-500 font-semibold"
+  >
+    Sidequest provides you with a set of tools to work with any idea you have in
+    mind and make it a reality.
+  </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 py-8">
+    <PricingCard
+      description="The best tool for creating better community tooling."
+      features={[
+        "Create, edit and delete anything you could ever wish for",
+        "All in one simple CLI",
+        "Powerful tool that allows you to create, edit and delete",
+      ]}
+    >
+      <div slot="title" class="flex items-center gap-3 pt-6">
+        <Image src={logo} alt="Sidequest Logo" class="h-12" />
+        <div class="text-2xl font-semibold text-gray-700">Sidequest CE</div>
+      </div>
+      <div slot="pricing" class="text-center">
+        <div class="text-3xl font-semibold text-gray-700">Free</div>
+      </div>
+    </PricingCard>
+    <PricingCard
+      description="The most popular feature-richt version of the sidequest experience."
+      backgroundColor="text-primary-500"
+      features={[
+        "Create, edit and delete anything you could ever wish for",
+        "All in one simple CLI",
+        "Powerful tool that allows you to create, edit and delete",
+      ]}
+    >
+      <div slot="title" class="flex items-center gap-3 pt-6">
+        <Image src={logo} alt="Sidequest Logo" class="h-12" />
+        <div class="text-2xl font-semibold text-gray-700">Sidequest Pro</div>
+      </div>
+      <div slot="pricing" class="text-center">
+        <div class="text-3xl font-semibold text-gray-700">$9.99</div>
+        <div class="text-sm font-semibold text-gray-700">per month</div>
+      </div>
+    </PricingCard>
+    <PricingCard
+      backgroundColor="text-primary-500"
+      description="For companies that need the most powerful features."
+      features={[
+        "Create, edit and delete anything you could ever wish for",
+        "All in one simple CLI",
+        "Powerful tool that allows you to create, edit and delete",
+      ]}
+    >
+      <div slot="title" class="flex items-center gap-3 pt-6">
+        <Image src={logo} alt="Sidequest Logo" class="h-12" />
+        <div class="text-2xl font-semibold text-gray-700">
+          Sidequest Enterprise
+        </div>
+      </div>
+      <div slot="pricing" class="text-center">
+        <div class="text-3xl font-semibold text-gray-700">Contact us</div>
+      </div>
+    </PricingCard>
+  </div>
+</div>
