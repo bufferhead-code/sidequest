@@ -1,15 +1,14 @@
 ---
 import logo from "../images/logo.svg";
 import { Image } from "astro:assets";
-import rssIcon from "../images/rss.svg";
-import facebookIcon from "../images/facebook.svg";
-import twitterIcon from "../images/twitter.svg";
-import ButtonSecondary from "./Button/ButtonSecondary.astro";
 import { Icon } from "astro-icon/components";
+import { footer, socialMedia } from "../config/footer";
 ---
 
 <div class="bg-gray-800 pt-14 pb-24">
-  <div class="container px-4 max-w-6xl flex flex-col sm:flex-row gap-6 justify-between mx-auto">
+  <div
+    class="container px-4 max-w-6xl flex flex-col sm:flex-row gap-6 justify-between mx-auto"
+  >
     <div class="">
       <div class="flex items-center gap-3 text-xl text-white font-semibold">
         <Image class="w-8" src={logo} alt="Sidequest logo" />
@@ -19,36 +18,26 @@ import { Icon } from "astro-icon/components";
         The Ultimate Tool for achieving anything
       </div>
       <div class="flex space-x-2 text-gray-400 pt-4">
-        <a href="#">
-          <Icon class="w-6 h-6" name="ph:rss-bold" />
-        </a>
-        <a href="#">
-          <Icon class="w-6 h-6" name="ph:facebook-logo-fill" />
-        </a>
-        <a href="#">
-          <Icon class="w-6 h-6" name="ph:linkedin-logo-fill" />
-        </a>
+        {
+          socialMedia.map((item) => (
+            <a href={item.href}>
+              <Icon class="w-6 h-6" name={item.icon} />
+            </a>
+          ))
+        }
       </div>
     </div>
     <div class="items-center space-y-8 sm:space-y-0 sm:grid grid-cols-3 gap-16">
-      <div class="text-gray-400 flex flex-col space-y-1.5">
-        <div class="font-semibold text-white pb-1">About</div>
-        <a>Contact us</a>
-        <a>Security</a>
-        <a>Legal</a>
-      </div>
-      <div class="text-gray-400 flex flex-col space-y-1.5">
-        <div class="font-semibold text-white pb-1">Community</div>
-        <a>Code of Conduct</a>
-        <a>Bug Reports</a>
-        <a>Wiki</a>
-      </div>
-      <div class="text-gray-400 flex flex-col space-y-1.5">
-        <div class="font-semibold text-white pb-1">Developers</div>
-        <a>Source Code</a>
-        <a>Contribute</a>
-        <a>FATE</a>
-      </div>
+      {
+        footer.map((item) => (
+          <div class="text-gray-400 flex flex-col space-y-1.5">
+            <div class="font-semibold text-white pb-1">{item.title}</div>
+            {item.links.map((link) => (
+              <a href={link.href}>{link.name}</a>
+            ))}
+          </div>
+        ))
+      }
     </div>
   </div>
 </div>

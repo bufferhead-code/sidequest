@@ -1,14 +1,12 @@
 ---
 import PricingBackground from "../../images/pricing-background.svg";
 import PricingFeatureItem from "./PricingFeatureItem.astro";
-import { twMerge } from "tailwind-merge";
 interface Props {
   description: string;
   features?: string[];
   backgroundColor?: string;
-  variant?: string;
 }
-const { description, features = [], variant = "default" } = Astro.props;
+const { description, features = [] } = Astro.props;
 ---
 
 <div
