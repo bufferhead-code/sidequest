@@ -10,7 +10,7 @@ const { description, features = [] } = Astro.props;
 ---
 
 <div
-  class="bg-white relative shadow border border-gray-200 rounded-lg isolate p-4"
+  class="bg-white relative shadow border border-base-200 rounded-lg isolate p-4"
 >
   <PricingBackground
     class="w-full z-10 h-full right-0 top-0 pointer-events-none absolute bg-no-repeat bg-contain"
@@ -24,7 +24,7 @@ const { description, features = [] } = Astro.props;
     </div>
     {
       description && (
-        <p class="text-center text-gray-600 font-medium">{description}</p>
+        <p class="text-center text-base-600 font-medium">{description}</p>
       )
     }
     <div class="py-6 px-5 space-y-3">

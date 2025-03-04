@@ -1,0 +1,32 @@
+---
+import acmeLogo from "../../images/placeholder/logos/acme.svg";
+import codecraftLogo from "../../images/placeholder/logos/codecraft.svg";
+import cooperativeLogo from "../../images/placeholder/logos/cooperative.svg";
+import coreosLogo from "../../images/placeholder/logos/coreos.svg";
+import eightballsLogo from "../../images/placeholder/logos/eightballs.svg";
+import { Image } from "astro:assets";
+---
+
+<div class="relative mt-12 sm:mt-28 mb-12">
+  <div
+    class="absolute w-full h-full top-0 left-0 bg-white/50 backdrop-blur-[3px] rounded-lg"
+    style="box-shadow: 0px 0px 30px 40px rgba(255,255,255,1);"
+  >
+  </div>
+  <div class="isolate">
+    <div
+      class="text-base-500 text-lg sm:text-xl uppercase text-center pt-2 font-bold pb-3 sm:pb-0"
+    >
+      Used and loved by
+    </div>
+    <div
+      class="flex flex-wrap sm:flex-nowrap w-full items-center justify-center space-y-3 sm:space-y-0 space-x-5 sm:space-x-12 text-base-400"
+    >
+      <Image src={acmeLogo} alt="damn" class="h-10 sm:h-24" />
+      <Image src={codecraftLogo} alt="media" class="h-10 sm:h-24" />
+      <Image src={cooperativeLogo} alt="company" class="h-10 sm:h-24" />
+      <Image src={coreosLogo} alt="on" class="h-10 sm:h-24" />
+      <Image src={eightballsLogo} alt="earth" class="h-10 sm:h-24" />
+    </div>
+  </div>
+</div>

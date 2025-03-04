@@ -2,25 +2,29 @@
 import logo from "../images/logo.svg";
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
-import { footer, socialMedia } from "../config/footer";
+import { footer } from "../config/footer";
+import { socialMedia } from "../config/socialMedia";
 ---
 
-<div class="bg-gray-800 pt-14 pb-24">
+<div class="bg-base-800 pt-14 pb-24">
   <div
     class="container px-4 max-w-6xl flex flex-col sm:flex-row gap-6 justify-between mx-auto"
   >
     <div class="">
-      <div class="flex items-center gap-3 text-xl text-white font-semibold">
+      <div class="flex items-center gap-3 text-2xl text-white font-semibold">
         <Image class="w-8" src={logo} alt="Sidequest logo" />
         <span>Sidequest</span>
       </div>
-      <div class="text-gray-300 font-medium max-w-[200px] text-sm py-3">
-        The Ultimate Tool for achieving anything
+      <div class="text-base-300 text-sm font-semibold max-w-[250px] py-2">
+        The Ultimate Tool for achieving anything you ever wanted
       </div>
-      <div class="flex space-x-2 text-gray-400 pt-4">
+      <div class="flex space-x-2 text-base-400 pt-3">
         {
           socialMedia.map((item) => (
-            <a href={item.href}>
+            <a
+              class="text-base-400 hover:text-base-200 transition"
+              href={item.href}
+            >
               <Icon class="w-6 h-6" name={item.icon} />
             </a>
           ))
@@ -30,10 +34,15 @@ import { footer, socialMedia } from "../config/footer";
     <div class="items-center space-y-8 sm:space-y-0 sm:grid grid-cols-3 gap-16">
       {
         footer.map((item) => (
-          <div class="text-gray-400 flex flex-col space-y-1.5">
+          <div class="text-base-400 flex flex-col space-y-1.5">
             <div class="font-semibold text-white pb-1">{item.title}</div>
             {item.links.map((link) => (
-              <a href={link.href}>{link.name}</a>
+              <a
+                class="text-base-400 hover:text-base-200 transition"
+                href={link.href}
+              >
+                {link.name}
+              </a>
             ))}
           </div>
         ))

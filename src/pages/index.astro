@@ -2,13 +2,13 @@
 import Layout from "../layouts/Layout.astro";
 import headerBg from "../images/header-bg.svg";
 import FeatureSection from "../components/Feature/FeatureSection.astro";
-import BentoGrid from "./Partials/BentoGrid.astro";
-import Testimonials from "./Partials/Testimonials.astro";
-import Hero from "./Partials/Hero.astro";
+import BentoGrid from "../components/Bento/BentoGrid.astro";
 import PricingSection from "../components/Pricing/PricingSection.astro";
 import Footer from "../components/Footer.astro";
 import FeatureImageSection from "../components/Feature/FeatureImageSection.astro";
 import FeatureListSection from "../components/Feature/FeatureListSection.astro";
+import HeroSection from "../components/Hero/HeroSection.astro";
+import TestimonialSection from "../components/Testimonial/TestimonialSection.astro";
 ---
 
 <Layout title="Sidequest - The Ultimate Tool to achieve anything">
@@ -21,8 +21,8 @@ import FeatureListSection from "../components/Feature/FeatureListSection.astro";
       >
       </div>
       <div class="container mx-auto px-4 pt-12 sm:pt-24 max-w-6xl">
-        <Hero />
-        <Testimonials />
+        <HeroSection />
+        <TestimonialSection />
         <BentoGrid />
       </div>
     </div>

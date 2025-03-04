@@ -20,7 +20,7 @@ import { Icon } from "astro-icon/components";
         Your All-In-One Solution
       </h3>
       <p
-        class="max-w-lg text-center mx-auto text-base sm:text-lg pt-4 text-gray-500 font-semibold"
+        class="max-w-lg text-center mx-auto text-base sm:text-lg pt-4 text-base-500 font-semibold"
       >
         Sidequest allows you to create, edit and delete anything you could ever
         wish for. All in one simple CLI.
@@ -30,7 +30,7 @@ import { Icon } from "astro-icon/components";
       >
         <button
           @click="selected = 'create'"
-          :class="selected === 'create' ? 'bg-primary text-white' : 'bg-white text-gray-700'"
+          :class="selected === 'create' ? 'bg-primary text-white' : 'bg-white text-base-700'"
           class="shadow px-3 py-1.5 rounded-lg flex items-center space-x-3"
         >
           <Icon class="w-6 h-6" name="ph:stack-plus-duotone" />
@@ -38,7 +38,7 @@ import { Icon } from "astro-icon/components";
         </button>
         <button
           @click="selected = 'update'"
-          :class="selected === 'update' ? 'bg-primary text-white' : 'bg-white text-gray-700'"
+          :class="selected === 'update' ? 'bg-primary text-white' : 'bg-white text-base-700'"
           class="shadow px-3 py-1.5 rounded-lg flex items-center space-x-3"
         >
           <Icon class="w-6 h-6" name="ph:selection-background-duotone" />
@@ -46,7 +46,7 @@ import { Icon } from "astro-icon/components";
         </button>
         <button
           @click="selected = 'delete'"
-          :class="selected === 'delete' ? 'bg-primary text-white' : 'bg-white text-gray-700'"
+          :class="selected === 'delete' ? 'bg-primary text-white' : 'bg-white text-base-700'"
           class="shadow px-3 py-1.5 rounded-lg flex items-center space-x-3"
         >
           <Icon class="w-6 h-6" name="ph:scissors-fill" />
