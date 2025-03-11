@@ -1,5 +1,9 @@
 # Sidequest Theme
 
+You can find the general documentation and the getting started guide in the [Bufferthemes Docs](https://docs.bufferthemes.com/getting-started).
+
+If you are looking for theme-specific documentation you can find it [here](https://docs.bufferthemes.com/theme/sidequest).
+
 ## 🚀 Project Structure
 
 Inside of your Astro project, you'll see the following folders and files:
