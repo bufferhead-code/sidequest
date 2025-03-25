@@ -9,9 +9,16 @@ import FeatureImageSection from "../components/Feature/FeatureImageSection.astro
 import FeatureListSection from "../components/Feature/FeatureListSection.astro";
 import HeroSection from "../components/Hero/HeroSection.astro";
 import TestimonialSection from "../components/Testimonial/TestimonialSection.astro";
+import { SEO } from "astro-seo";
 ---
 
-<Layout title="Sidequest - The Ultimate Tool to achieve anything">
+<Layout>
+  <Fragment slot="head">
+    <SEO
+      description="Build Astro websites superfast, with easy to customize themes."
+      title="Sidequest - The Ultimate Tool to achieve anything"
+    />
+  </Fragment>
   <div class="bg-gradient-to-r from-primary-400 to-primary-800 w-full h-3">
   </div>
   <main>
