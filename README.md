@@ -1,5 +1,18 @@
 # Sidequest Theme
 
+A modern landing page theme for software products, CLIs and SaaS, built with Astro and Tailwind CSS.
+
+![Sidequest theme screenshot](.github/screenshots/desktop.png)
+
+<details>
+<summary>More screenshots</summary>
+
+|                                      Mobile                                      |                                      Full page                                      |
+| :------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------: |
+| <img src=".github/screenshots/mobile.png" alt="Sidequest on mobile" width="300"> | <img src=".github/screenshots/full-page.png" alt="Sidequest full page" width="500"> |
+
+</details>
+
 You can find the general documentation and the getting started guide in the [Bufferthemes Docs](https://docs.bufferthemes.com/getting-started).
 
 If you are looking for theme-specific documentation you can find it [here](https://docs.bufferthemes.com/theme/sidequest).
